@@ -6,15 +6,24 @@ export function Skills() {
     },
     {
       category: "Backend",
-      skills: ["FastAPI","MySQL","Python"],
+      skills: ["Python","FastAPI","REST APIs","Authentication & API Integration"],
     },
     {
+      category: "AI & Automation",
+      skills: [ "Prompt Engineering", "Retrieval-Augmented Generation (RAG)", "AI Integration", "Automation Workflows(n8n)", "AI-powered chat & Q&A systems"],
+    },
+    {
+      category:"Data & Analytics",
+      skills:["SQL","Excel","Power BI"],
+    },
+
+    {
       category: "Tools & Cloud",
-      skills: ["Git", "Github"],
+      skills: ["Git", "Github", "Deployment"],
     },
     {
       category: "Soft Skills",
-      skills: ["Problem Solving", "Team Leadership", "Code Review", "Debugging"],
+      skills: ["Problem Solving", "Debugging"],
     },
   ];
 

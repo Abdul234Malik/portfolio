@@ -1,17 +1,12 @@
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { Skills } from "./components/Skills";
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
+import { Routes, Route } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import { ProjectsPage } from "./pages/ProjectsPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/projects" element={<ProjectsPage />} />
+    </Routes>
   );
 }

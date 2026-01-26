@@ -12,13 +12,12 @@ export function Hero() {
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl text-gray-900">Adeboye Abdul-Malik</h1>
             <h2 className="text-2xl md:text-3xl text-gray-600">
-              Full Stack Developer, AI Developer & Tech Innovator
+              Full-Stack & AI Engineer building intelligent, scalable web products
             </h2>
           </div>
 
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Crafting elegant solutions to complex problems. Specialized in building scalable
-            web applications and creating exceptional user experiences.
+            I design and develop full-stack applications, AI-powered features, and automated systems that solve real business problems from idea to production
           </p>
 
           <div className="flex items-center justify-center gap-4 flex-wrap">

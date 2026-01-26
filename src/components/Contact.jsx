@@ -7,12 +7,12 @@ export function Contact() {
       title: "Email",
       value: "adeboyemalik67@gmail.com",
       href: "mailto:adeboyemalik67@gmail.com",
-      description: "Reach out for opportunities",
+      description: "Reach out for web apps, AI solutions, or automation projects",
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "linkedin.com/in/Quiet-Don",
+      value: "linkedin.com/in/abdul234",
       href: "https://www.linkedin.com/in/quiet-don-378387392/",
       description: "Let's connect professionally",
     },
@@ -26,7 +26,7 @@ export function Contact() {
     {
       icon: Twitter,
       title: "Twitter",
-      value: "@quiet_don",
+      value: "@abdul234",
       href: "https://x.com/FowosereNBA?t=IKkv0V8-BAqhVzdS3Dl5OQ&s=09",
       description: "Follow for tech insights",
     },
@@ -39,8 +39,7 @@ export function Contact() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl mb-4 text-gray-900">Get In Touch</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              I'm always open to discussing new projects, creative ideas, or opportunities
-              to be part of your visions. Feel free to reach out!
+             I build modern web applications, AI-powered solutions, and automation systems. I’m always open to discussing new projects, product ideas, or opportunities where technology can create real impact.
             </p>
           </div>
 
@@ -75,8 +74,7 @@ export function Contact() {
             <MessageSquare className="h-12 w-12 mx-auto mb-4" />
             <h3 className="text-2xl mb-2">Let's Build Something Amazing</h3>
             <p className="text-blue-100 mb-6">
-              Whether you have a question, a project idea, or just want to say hi, 
-              I'd love to hear from you.
+              Whether you need a web application, an AI-powered assistant, or a system to automate repetitive workflows, I’d love to hear about your project.
             </p>
             <a
               href="mailto:adeboyemalik67@gmail.com"
