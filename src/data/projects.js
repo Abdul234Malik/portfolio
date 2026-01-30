@@ -11,7 +11,7 @@ export const projects = [
     title: "Property Management System",
     description:"A web-based Property Operations Dashboard designed to help property owners manage tenants, rent, staff, and documents in one centralized system, eliminating manual spreadsheets and fragmented communication.",
     tags:["html", "css","javascript"],
-    image: "pj-img/Property-management.png",
+    image: "pj-img/property-management.png",
     github: "https://github.com",
     demo: "",
   },
