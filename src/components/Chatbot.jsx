@@ -1,15 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, Send, X, Loader2 } from "lucide-react";
 
-// Relative path so same-origin works on Vercel; override with VITE_CHAT_API_URL if needed.
-const CHAT_API_URL = import.meta.env.VITE_CHAT_API_URL || "/api/chat";
+// Production: always same-origin. Development: allow VITE_CHAT_API_URL override for local backend.
+const CHAT_API_URL =
+  import.meta.env.MODE === "development" && import.meta.env.VITE_CHAT_API_URL
+    ? import.meta.env.VITE_CHAT_API_URL
+    : "/api/chat";
 
-// When the site is live, the browser blocks requests to localhost. Chat is available when using a same-origin or production API URL.
-const isChatAvailable =
-  typeof window === "undefined" ||
-  window.location.hostname === "localhost" ||
-  window.location.hostname === "127.0.0.1" ||
-  !CHAT_API_URL.includes("localhost");
+// Chat is available when using a same-origin path (no private network access).
+const isChatAvailable = CHAT_API_URL.startsWith("/");
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);

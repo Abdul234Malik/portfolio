@@ -1,6 +1,5 @@
 """
 Portfolio chatbot API – normal FastAPI backend.
-Run with: uvicorn main:app --reload --port 8000
 Set OPENAI_API_KEY in your environment (or .env file in backend/) – never expose it to the frontend.
 """
 import os
