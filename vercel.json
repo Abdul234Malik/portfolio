@@ -1,7 +1,14 @@
+
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "functions": {
+    "api/chat.py": {
+      "runtime": "python3.10"
+    }
+  },
   "rewrites": [
-  { "source": "/projects", "destination": "/index.html" }
-]
+    { "source": "/projects", "destination": "/index.html" }
+  ]
 }
+

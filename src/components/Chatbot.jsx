@@ -1,7 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, Send, X, Loader2 } from "lucide-react";
 
-const CHAT_API_URL = import.meta.env.VITE_CHAT_API_URL || "http://localhost:8000/api/chat";
+// Relative path so same-origin works on Vercel; override with VITE_CHAT_API_URL if needed.
+const CHAT_API_URL = import.meta.env.VITE_CHAT_API_URL || "/api/chat";
+
+// When the site is live, the browser blocks requests to localhost. Chat is available when using a same-origin or production API URL.
+const isChatAvailable =
+  typeof window === "undefined" ||
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1" ||
+  !CHAT_API_URL.includes("localhost");
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +35,7 @@ export function Chatbot() {
   }, [isOpen]);
 
   const sendMessage = async () => {
+    if (!isChatAvailable) return;
     const text = input.trim();
     if (!text || loading) return;
 
@@ -108,7 +117,13 @@ export function Chatbot() {
 
           <div className="flex max-h-[320px] min-h-[200px] flex-1 flex-col overflow-hidden">
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {messages.length === 0 && (
+              {!isChatAvailable && (
+                <p className="text-sm text-gray-600 text-center py-4">
+                  Chat is not configured for this environment. To enable it, deploy the backend and set{" "}
+                  <code className="text-xs bg-gray-100 px-1 rounded">VITE_CHAT_API_URL</code> in your hosting settings.
+                </p>
+              )}
+              {isChatAvailable && messages.length === 0 && (
                 <p className="text-sm text-gray-500 text-center py-4">
                   Hi 👋
                   I can answer questions about Adeboye Abdul-Malik's skills, projects, and experience.
@@ -146,29 +161,31 @@ export function Chatbot() {
               <div ref={messagesEndRef} />
             </div>
 
-            <div className="border-t border-gray-200 p-3">
-              <div className="flex gap-2">
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Type your question…"
-                  disabled={loading}
-                  className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-50 disabled:text-gray-500"
-                />
-                <button
-                  type="button"
-                  onClick={sendMessage}
-                  disabled={loading || !input.trim()}
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white transition-colors hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                  aria-label="Send message"
-                >
-                  <Send className="h-4 w-4" />
-                </button>
+            {isChatAvailable && (
+              <div className="border-t border-gray-200 p-3">
+                <div className="flex gap-2">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    placeholder="Type your question…"
+                    disabled={loading}
+                    className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-50 disabled:text-gray-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={sendMessage}
+                    disabled={loading || !input.trim()}
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white transition-colors hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label="Send message"
+                  >
+                    <Send className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}
