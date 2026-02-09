@@ -3,21 +3,21 @@ Portfolio chatbot API – normal FastAPI backend.
 Set OPENAI_API_KEY in your environment (or .env file in backend/) – never expose it to the frontend.
 """
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from openai import OpenAI
 
-from prompts import SYSTEM_PROMPT, PORTFOLIO_KNOWLEDGE
+from .prompts import SYSTEM_PROMPT, PORTFOLIO_KNOWLEDGE
 
 app = FastAPI(title="Portfolio Chat API")
 
 # CORS: allow React frontend. Add your production frontend URL to the env var if needed.
-_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
+_origins = os.getenv("ALLOWED_ORIGINS", "").split(",")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[o.strip() for o in _origins if o.strip()],
