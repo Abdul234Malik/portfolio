@@ -28,7 +28,7 @@ export function Skills() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-blue-50/40">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl mb-12 text-center text-gray-900">Skills & Expertise</h2>
@@ -41,7 +41,7 @@ export function Skills() {
                   {category.skills.map((skill) => (
                     <span 
                       key={skill} 
-                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm border border-gray-200"
+                      className="px-3 py-1 bg-white text-gray-800 rounded-full text-sm border border-gray-300 shadow-sm"
                     >
                       {skill}
                     </span>

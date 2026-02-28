@@ -88,7 +88,7 @@ export function Chatbot() {
       <button
         type="button"
         onClick={() => setIsOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-lg bg-blue-500 text-white shadow-lg transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         {isOpen ? (
@@ -136,7 +136,7 @@ export function Chatbot() {
                   <div
                     className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
                       msg.role === "user"
-                        ? "bg-blue-600 text-white"
+                        ? "bg-blue-500 text-white"
                         : "bg-gray-100 text-gray-900 border border-gray-200"
                     }`}
                   >
@@ -177,7 +177,7 @@ export function Chatbot() {
                     type="button"
                     onClick={sendMessage}
                     disabled={loading || !input.trim()}
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white transition-colors hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500 text-white transition-colors hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     aria-label="Send message"
                   >
                     <Send className="h-4 w-4" />

@@ -3,9 +3,11 @@ export function About() {
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl mb-8 text-center text-gray-900">About Me</h2>
+          <h2 className="text-3xl md:text-4xl mb-8 text-center text-gray-900 animate-blur-reveal" style={{ animationDelay: "0.5s" }}>
+            About Me
+          </h2>
           
-          <div className="space-y-6 text-lg text-gray-600">
+          <div className="space-y-6 text-lg text-gray-700 animate-blur-reveal" style={{ animationDelay: "0.65s" }}>
             <p>
               I’m a Full-Stack & AI Developer who enjoys turning complex problems into practical, well-structured solutions. I focus on building modern web applications, integrating AI-powered features, and designing systems that are reliable, scalable, and easy to maintain
             </p>

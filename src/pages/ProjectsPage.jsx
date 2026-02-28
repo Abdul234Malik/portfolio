@@ -17,7 +17,7 @@ export function ProjectsPage() {
             <div className="mb-8">
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to Home
