@@ -23,7 +23,7 @@ export function Skills() {
     },
     {
       category: "Soft Skills",
-      skills: ["Problem Solving", "Debugging"],
+      skills: ["Problem Solving", "Debugging", "Leadership", "Communication"],
     },
   ];
 

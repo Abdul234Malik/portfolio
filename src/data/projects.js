@@ -5,18 +5,25 @@ export const projects = [
     image:"pj-img/NELFUND-AI.png",
     demo: "https://nelfund-six.vercel.app/",
   },
+
+  {
+    title:"Bizly",
+    description:"Bizly is an AI-powered business assistant that helps small business owners generate messages, captions, invoices, and customer replies instantly designed for fast, everyday business communication, especially on WhatsApp.",
+    image:"pj-img/Bizly.png",
+    demo: "https://bizly-one.vercel.app/",
+
+  },
+  {
+    title: "CLINIQ-FLOW",
+    description:"Cliniq-Flow is an assistive clinical workflow system that integrates multilingual speech recognition, structured symptom extraction, urgency detection, and medication validation into a clinician-in-the-loop architecture.This project explores how AI can be safely embedded into healthcare workflows without bypassing human oversight.",
+    image:"pj-img/CLINIK.png",
+    demo: "",
+  },
   {
     title: "Property Management System",
     description:"A web-based Property Operations Dashboard designed to help property owners manage tenants, rent, staff, and documents in one centralized system, eliminating manual spreadsheets and fragmented communication.",
     image: "pj-img/Property-management.png",
     demo: "",
-  },
-  {
-    title:"Nigerian Business AI Assistant",
-    description:"An AI-powered business assistant designed to help Nigerian small business owners with pricing, customer communication, and content creation, reducing daily operational stress and improving professionalism.",
-    image:"pj-img/business-assistant.png",
-    demo: "",
-
   },
   {
     title: "Foodie",

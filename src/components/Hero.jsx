@@ -14,7 +14,7 @@ export function Hero() {
               Adeboye Abdul-Malik
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-700 animate-blur-reveal" style={{ animationDelay: "0.1s" }}>
-              Full-Stack & AI Engineer building intelligent, scalable web products
+              Full-Stack Developer & AI Engineer building intelligent, scalable web products
             </h2>
           </div>
 
